@@ -8,13 +8,13 @@
 </p>
 
 <p style="text-align: center;">
-<a href = "https://www.youtube.com/watch?v=aV1271hd9ew">
+<a href = "https://github.com/acdlite/react-fiber-architecture">
  React 공식 문서에서 첨부된 위의 발표자의 문서
 </p>
 
 ### React Conf 2017: A Cartoon Intro to Fiber by Lin Clark
 <p style="text-align: center;">
-<a href = "(https://www.youtube.com/watch?v=ZCuYPiUIONs">
+<a href = "https://www.youtube.com/watch?v=ZCuYPiUIONs">
 <img src = "http://i.ytimg.com/vi/ZCuYPiUIONs/0.jpg"/>
 </a>
 </p>
