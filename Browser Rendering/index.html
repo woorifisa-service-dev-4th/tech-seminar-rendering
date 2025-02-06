@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reflow vs Transform Animation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+            max-width: 600px;
+            margin-top: 30px;
+        }
+        .box {
+            width: 50px;
+            height: 50px;
+            background-color: #4CAF50;
+            position: relative;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<h1>Reflow  Animation Demo</h1>
+
+<button onclick="moveWithLeftContinuous()">Move right (Reflow)</button>
+<button onclick="moveWithTransform()">Move right with Transform (No Reflow)</button>
+
+<div class="container">
+    <div id="box-left" class="box"></div>
+    <div id="box-transform" class="box"></div>
+</div>
+
+<script>
+    // Move continuously using 'left' property - causes continuous reflow
+    function moveWithLeftContinuous() {
+        const box = document.getElementById('box-left');
+        let position = 0;
+        const interval = setInterval(() => {
+            position += 5;
+            box.style.left = position + 'px';
+            if (position >= 200) {
+                clearInterval(interval);
+            }
+        }, 50);
+    }
+
+    // Move using 'transform' property - no reflow
+    function moveWithTransform() {
+        const box = document.getElementById('box-transform');
+        box.style.transform = 'translateX(200px)';
+        box.style.transition = 'transform 1s';
+    }
+</script>
+</body>
+</html>
